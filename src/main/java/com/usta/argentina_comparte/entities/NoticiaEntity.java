@@ -49,5 +49,11 @@ public class NoticiaEntity implements Serializable {
     @Column(name = "estado_ntc", nullable = false)
     private boolean estadoNoticia;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private UsuarioEntity usuario;
+
+    public NoticiaEntity() {
+    }
 
 }

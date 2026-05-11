@@ -49,6 +49,10 @@ public class SoliContactoEntity implements Serializable {
     @Column(name = "fecha_solicitud", nullable = false)
     private LocalDate fechaSolicitud;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private UsuarioEntity usuario;
+
     public SoliContactoEntity() {
     }
 }
